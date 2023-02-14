@@ -1,0 +1,46 @@
+.rules__container {
+  /* background-color: white; */
+  /* transition: all 1s ease-in-out; */
+}
+.rules__container .rules__card {
+  background-color: white;
+  border-radius: 1rem;
+}
+@media screen and (max-width: 620px) {
+  .rules__container {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    background-color: white;
+  }
+  .rules__container .rules__card {
+    width: 100%;
+    height: 100%;
+  }
+  .close__rules__icon {
+    position: absolute;
+    bottom: 5%;
+    right: 50%;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 620px) {
+  .rules__container {
+    display: grid;
+    place-content: center;
+    position: fixed;
+    inset: 0;
+    background-color: hsl(200, 200, 0.2);
+  }
+  .rules__card {
+    padding: 2rem;
+    position: relative;
+  }
+  .close__rules__icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+  }
+}

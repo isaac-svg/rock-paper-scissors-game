@@ -4,6 +4,7 @@ import GameBar from "./components/GameBar";
 import BoardComponent from "./components/BoardComponent";
 import Button from "./components/Button";
 import { gameContext } from "./ganecontext/GameContext";
+import RulesComponent from "./components/utils/RulesComponent";
 const App = () => {
   const { showRules } = useContext(gameContext);
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <GameBar />
       <BoardComponent />
       <Button />
-      {showRules && <div>Hello world</div>}
+      {showRules && <RulesComponent />}
     </main>
   );
 };

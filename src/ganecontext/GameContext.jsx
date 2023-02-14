@@ -6,6 +6,9 @@ const GameContextProvider = ({ children }) => {
     name: "",
     img: "",
   });
+  /**
+   state to show and hide the decision making component i.e DecisionComponent
+   */
   /*
   this state hides and displays the choice component based on the state. */
   const [showChoicePage, setShowChoicePage] = useState(false);
@@ -13,7 +16,7 @@ const GameContextProvider = ({ children }) => {
  template for the card component the only unique features about each card  are the name and the image
 */
 
-  /*
+  /** 
 function to set set the state of the gameObject that is the choice
 @param  choice
  this takes the state and updates it with the name and img url of the card xclicked 
