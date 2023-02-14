@@ -9,28 +9,16 @@ const BoardComponent = () => {
         <Disc
           name="scissors"
           position={"disc__1"}
-          icon="/public/images/icon-scissors.svg"
+          icon="/images/icon-scissors.svg"
         />
         <Disc
           name="lizard"
           position={"disc__2"}
-          icon="/public/images/icon-lizard.svg"
+          icon="/images/icon-lizard.svg"
         />
-        <Disc
-          name="rock"
-          position={"disc__3"}
-          icon="/public/images/icon-rock.svg"
-        />
-        <Disc
-          name="paper"
-          position={"disc__4"}
-          icon="/public/images/icon-paper.svg"
-        />
-        <Disc
-          name="spock"
-          position={"disc__5"}
-          icon="/public/images/icon-spock.svg"
-        />
+        <Disc name="rock" position={"disc__3"} icon="/images/icon-rock.svg" />
+        <Disc name="paper" position={"disc__4"} icon="/images/icon-paper.svg" />
+        <Disc name="spock" position={"disc__5"} icon="/images/icon-spock.svg" />
       </div>
     </div>
   );
