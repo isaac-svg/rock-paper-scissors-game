@@ -21,8 +21,14 @@ function to set set the state of the gameObject that is the choice
   const updateChoice = (choice) => {
     setGameObject({ name: choice.name, img: choice.img });
   };
+  /*
+  state to check the condition of rules modal either true or false
+  */
+  const [showRules, setShowRules] = useState(false);
   return (
-    <gameContext.Provider value={{ updateChoice, gameObject }}>
+    <gameContext.Provider
+      value={{ updateChoice, gameObject, showRules, setShowRules }}
+    >
       {children}
     </gameContext.Provider>
   );
