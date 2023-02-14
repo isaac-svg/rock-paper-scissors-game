@@ -4,11 +4,12 @@ export const gameContext = createContext(null);
 const GameContextProvider = ({ children }) => {
   const [gameObject, setGameObject] = useState({
     name: "",
-    img: "",
+    icon: "",
   });
   /**
    state to show and hide the decision making component i.e DecisionComponent
    */
+  const [showDecisionPage, setShowDecisionPage] = useState(false);
   /*
   this state hides and displays the choice component based on the state. */
   const [showChoicePage, setShowChoicePage] = useState(false);
@@ -30,7 +31,14 @@ function to set set the state of the gameObject that is the choice
   const [showRules, setShowRules] = useState(false);
   return (
     <gameContext.Provider
-      value={{ updateChoice, gameObject, showRules, setShowRules }}
+      value={{
+        updateChoice,
+        gameObject,
+        showRules,
+        setShowRules,
+        showDecisionPage,
+        setShowDecisionPage,
+      }}
     >
       {children}
     </gameContext.Provider>
