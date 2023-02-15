@@ -5,7 +5,7 @@
 4--general styles
 5--header styles 
 
-
+--choice styles
 */
 * {
   margin: 0;
@@ -120,27 +120,27 @@ h5.header__text {
   background-color: white;
   /* box-shadow: inset -7px 7px 16px rgba(0, 0, 0, 0.2); */
 }
-#scissors {
+#scissors__border {
   border: 15px solid var(--scissors-gradient2);
   box-shadow: 4px 4px var(--scissors-gradient1),
     inset -4px 4px 5px rgba(0, 0, 0, 0.2);
 }
-#paper {
+#paper__border {
   border: 15px solid var(--paper-gradient2);
   box-shadow: 4px 4px var(--paper-gradient1),
     inset -4px 4px 5px rgba(0, 0, 0, 0.2);
 }
-#rock {
+#rock__border {
   border: 15px solid var(--rock-gradient2);
   box-shadow: 4px 4px var(--rock-gradient1),
     inset -4px 4px 5px rgba(0, 0, 0, 0.2);
 }
-#spock {
+#spock__border {
   border: 15px solid var(--cyan-gradient2);
   box-shadow: 4px 4px var(--cyan-gradient1),
     inset -4px 4px 5px rgba(0, 0, 0, 0.2);
 }
-#lizard {
+#lizard__border {
   border: 15px solid var(--lizard-gradient2);
   box-shadow: 4px 4px var(--lizard-gradient1),
     inset -4px 4px 5px rgba(0, 0, 0, 0.2);
@@ -240,6 +240,12 @@ h5.header__text {
   .disc__1 {
     top: 5rem;
   }
+  /* choice disc styles */
+  .choice__disc {
+    width: 200px;
+    height: 200px;
+    border-width: 600px;
+  }
 }
 /*  styles for the board  */
 
@@ -255,4 +261,29 @@ h5.header__text {
 .pentagon {
   position: relative;
   /* background-color: orange; */
+}
+/* Decision making board styyles */
+
+.decision__component {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: aqua;
+}
+.decision__component .choice {
+  background-color: tomato;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+.decision__component .choice .disc {
+  position: initial;
+  margin-inline: auto;
+}
+.choice__text {
+  margin-bottom: 3rem;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
 }

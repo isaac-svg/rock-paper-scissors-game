@@ -23,7 +23,7 @@ function to set set the state of the gameObject that is the choice
  this takes the state and updates it with the name and img url of the card xclicked 
 */
   const updateChoice = (choice) => {
-    setGameObject({ name: choice.name, img: choice.img });
+    setGameObject({ name: choice.name, icon: choice.icon });
   };
   /*
   state to check the condition of rules modal either true or false

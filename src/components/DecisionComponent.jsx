@@ -6,8 +6,23 @@ const DecisionComponent = () => {
   const { gameObject } = useContext(gameContext);
   console.log(gameObject);
   return (
-    <div>
-      <Disc name={gameObject.name} icon={gameObject.icon} />
+    <div className="decision__component">
+      <div className="choice">
+        <Disc
+          name={gameObject.name}
+          icon={gameObject.icon}
+          position="choice__disc"
+        />
+        <span className="text choice__text">YOU PICKED</span>
+      </div>
+      <div className="choice">
+        <Disc
+          name={gameObject.name}
+          icon={gameObject.icon}
+          position="choice__disc"
+        />
+        <span className="text choice__text">THE HOUSE PICKED</span>
+      </div>
     </div>
   );
 };
