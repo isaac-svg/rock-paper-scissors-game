@@ -1,20 +1,29 @@
+import { useEffect } from "react";
+
 const posibleComputerChoices = [
-  { name: "rock", icon: "images/icon-rock.svg" },
-  { name: "lizard", icon: "images/icon-lizard.svg" },
-  { name: "paper", icon: "images/icon-paper.svg" },
-  { name: "scissors", icon: "images/icon-scissors.svg" },
-  { name: "spock", icon: "images/icon-spock.svg" },
+  { name: "rock__border", icon: "images/icon-rock.svg" },
+  { name: "lizard__border", icon: "images/icon-lizard.svg" },
+  { name: "paper__border", icon: "images/icon-paper.svg" },
+  { name: "scissors__border", icon: "images/icon-scissors.svg" },
+  { name: "spock__border", icon: "images/icon-spock.svg" },
+  { name: "lizard__border", icon: "images/icon-lizard.svg" },
+  { name: "scissors__border", icon: "images/icon-scissors.svg" },
+  { name: "paper__border", icon: "images/icon-paper.svg" },
+  { name: "spock__border", icon: "images/icon-spock.svg" },
+  { name: "rock__border", icon: "images/icon-rock.svg" },
 ];
 /**
- * @returns computer choice
+ * @returns computer choice after 1.5s
  * @function useGame picks a random choice each time it is invoked
  */
-const useGame = () => {
+const makeChoice = () => {
+  console.log("pseudo is called");
   const computerChoice =
     posibleComputerChoices[
-      Math.floor(Math.random() * posibleComputerChoices.length)
+      Math.floor(Math.random() * (posibleComputerChoices.length - 1))
     ];
+  console.log(computerChoice, "from computer");
   return computerChoice;
 };
 
-export default useGame;
+export default makeChoice;

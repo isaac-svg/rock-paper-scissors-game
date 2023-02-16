@@ -2,6 +2,9 @@ import { createContext, useState } from "react";
 export const gameContext = createContext(null);
 
 const GameContextProvider = ({ children }) => {
+  /*
+ template for the card component the only unique features about each card  are the name and the image
+*/
   const [gameObject, setGameObject] = useState({
     name: "",
     icon: "",
@@ -12,10 +15,7 @@ const GameContextProvider = ({ children }) => {
   const [showDecisionPage, setShowDecisionPage] = useState(false);
   /*
   this state hides and displays the choice component based on the state. */
-  const [showChoicePage, setShowChoicePage] = useState(false);
-  /*
- template for the card component the only unique features about each card  are the name and the image
-*/
+  const [showComputerChoice, setShowComputerChoice] = useState(false);
 
   /** 
 function to set set the state of the gameObject that is the choice
@@ -29,6 +29,10 @@ function to set set the state of the gameObject that is the choice
   state to check the condition of rules modal either true or false
   */
   const [showRules, setShowRules] = useState(false);
+  /**
+   * state to prevent change of choice after computer making choice
+   */
+  const [allowChange, setAllowChange] = useState(true);
   return (
     <gameContext.Provider
       value={{
@@ -38,6 +42,10 @@ function to set set the state of the gameObject that is the choice
         setShowRules,
         showDecisionPage,
         setShowDecisionPage,
+        allowChange,
+        setAllowChange,
+        setShowComputerChoice,
+        showComputerChoice,
       }}
     >
       {children}
