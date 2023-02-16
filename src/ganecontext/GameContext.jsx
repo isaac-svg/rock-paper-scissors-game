@@ -3,9 +3,17 @@ export const gameContext = createContext(null);
 
 const GameContextProvider = ({ children }) => {
   /*
- template for the card component the only unique features about each card  are the name and the image
+ interface for the card component the only unique features about each card  are the name and the image
 */
   const [gameObject, setGameObject] = useState({
+    name: "",
+    icon: "",
+  });
+  /*
+ interface for the computer choice 
+ the holds the sets the state of the computer choice
+*/
+  const [computerChoiceGameObject, setComputerChoiceGameObject] = useState({
     name: "",
     icon: "",
   });
@@ -33,6 +41,15 @@ function to set set the state of the gameObject that is the choice
    * state to prevent change of choice after computer making choice
    */
   const [allowChange, setAllowChange] = useState(true);
+  /**
+   score state  
+   */
+  const [score, setScore] = useState(0);
+  /**
+   score state  
+   */
+  const [declareWinner, setDeclareWinner] = useState(false);
+
   return (
     <gameContext.Provider
       value={{
@@ -46,6 +63,12 @@ function to set set the state of the gameObject that is the choice
         setAllowChange,
         setShowComputerChoice,
         showComputerChoice,
+        score,
+        computerChoiceGameObject,
+        setComputerChoiceGameObject,
+        setScore,
+        setDeclareWinner,
+        declareWinner,
       }}
     >
       {children}

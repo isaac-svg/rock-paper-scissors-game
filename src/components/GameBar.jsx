@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { gameContext } from "../ganecontext/GameContext";
 
 const GameBar = () => {
+  const { score } = useContext(gameContext);
   return (
     <nav className="game__nav outline">
       <div className="title">
@@ -12,7 +14,7 @@ const GameBar = () => {
       </div>
       <div className="score__button">
         <p className="score__text">score</p>
-        <span className="score__value">12</span>
+        <span className="score__value">{score}</span>
       </div>
     </nav>
   );
