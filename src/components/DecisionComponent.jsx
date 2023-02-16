@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { gameContext } from "../ganecontext/GameContext";
-import makeChoice from "../hooks/useGame";
-// import useGame from "../hooks/useGame";
+import makeChoice from "../controller/makeChoice";
 import Disc from "./Disc";
 
 const DecisionComponent = () => {

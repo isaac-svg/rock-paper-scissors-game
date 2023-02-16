@@ -120,6 +120,8 @@ h5.header__text {
   background-color: white;
   /* box-shadow: inset -7px 7px 16px rgba(0, 0, 0, 0.2); */
 }
+.computer__card {
+}
 #scissors__border {
   border: 15px solid var(--scissors-gradient2);
   box-shadow: 4px 4px var(--scissors-gradient1),
@@ -287,3 +289,4 @@ h5.header__text {
   font-size: 1.5rem;
   font-weight: 600;
 }
+/*  */

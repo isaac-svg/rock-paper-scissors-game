@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const posibleComputerChoices = [
   { name: "rock__border", icon: "images/icon-rock.svg" },
   { name: "lizard__border", icon: "images/icon-lizard.svg" },
