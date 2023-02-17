@@ -24,73 +24,31 @@ const chooseWinner = (
   computerChoice,
   setScore,
   state,
-  declareWinner
+  declareWinner,
+  declareDraw
 ) => {
-  console.log({ userChoice, computerChoice, setScore, state, declareWinner });
-  console.log(
-    userChoice === "scissors" && scissorsWinsAgainst[computerChoice],
-    userChoice === "paper" && paperWinsAgainst[computerChoice],
-    userChoice === "rock" && rockWinsAgainst[computerChoice],
-    userChoice === "lizard" && lizardWinsAgainst[computerChoice],
-    userChoice === "spock" && spockWinsAgainst[computerChoice],
-    "dynamic"
-  );
-  switch (true) {
-    case userChoice === "scissors" && scissorsWinsAgainst[computerChoice]:
-      setScore((state += 1));
-      declareWinner(true);
-      break;
-    case userChoice === "paper" && paperWinsAgainst[computerChoice]:
-      setScore((state += 1));
-      declareWinner(true);
-      break;
-    case userChoice === "rock" && rockWinsAgainst[computerChoice]:
-      setScore((state += 1));
-      declareWinner(true);
-      break;
-    case userChoice === "lizard" && lizardWinsAgainst[computerChoice]:
-      setScore((state += 1));
-      declareWinner(true);
-      break;
-    case userChoice === "spock" && spockWinsAgainst[computerChoice]:
-      setScore((state += 1));
-      declareWinner(true);
-      break;
-    case computerChoice === "scissors" && scissorsWinsAgainst[userChoice]:
-
-    case computerChoice === "paper" && paperWinsAgainst[userChoice]:
-    case computerChoice === "rock" && rockWinsAgainst[userChoice]:
-    case computerChoice === "lizard" && lizardWinsAgainst[userChoice]:
-    case computerChoice === "spock" && spockWinsAgainst[userChoice]:
-      setScore((state -= 1));
-      declareWinner(true);
-      break;
-    default:
-      console.log("nothing done in switch");
-      break;
+  if (
+    (userChoice === "scissors" && computerChoice === "paper") ||
+    (userChoice === "scissors" && computerChoice === "lizard") ||
+    (userChoice === "paper" && computerChoice === "lizard") ||
+    (userChoice === "paper" && computerChoice === "spock") ||
+    (userChoice === "rock" && computerChoice === "lizard") ||
+    (userChoice === "rock" && computerChoice === "scissors") ||
+    (userChoice === "lizard" && computerChoice === "spock") ||
+    (userChoice === "lizard" && computerChoice === "paper") ||
+    (userChoice === "spock" && computerChoice === "scissors") ||
+    (userChoice === "spock" && computerChoice === "rock")
+  ) {
+    setScore((state += 1));
+    declareWinner(true);
+  } else if (userChoice === computerChoice) {
+    setScore((state = state));
+    // declareWinner(true);
+    declareDraw(true);
+  } else {
+    setScore((state -= 1));
+    declareWinner(true);
   }
 };
 
 export default chooseWinner;
-
-/**case userChoice === "scissors" && scissorsWinsAgainst[computerChoice]:
-      setScore((state += 1));
-      declareWinner(true);
-      break;
-    case userChoice === "paper" && paperWinsAgainst[computerChoice]:
-      setScore((state + 1));
-      declareWinner(true);
-      break;
-    case userChoice === "rock" && rockWinsAgainst[computerChoice]:
-      setScore((state +1));
-      declareWinner(true);
-      break;
-    case userChoice === "lizard" && lizardWinsAgainst[computerChoice]:
-      setScore((state +1));
-      declareWinner(true);
-      break;
-    case userChoice === "spock" && spockWinsAgainst[computerChoice]:
-      setScore((state +1));
-      declareWinner(true);
-      break;
- */

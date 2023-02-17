@@ -1,16 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { delayState } from "../controller/delayState";
 import { gameContext } from "../ganecontext/GameContext";
-
+import Logo from "/images/logo-bonus.svg";
 const GameBar = () => {
   const { score } = useContext(gameContext);
+
   return (
     <nav className="game__nav outline">
       <div className="title">
-        <h5 className="text header__text">ROCK</h5>
-        <h5 className="text header__text">PAPER</h5>
-        <h5 className="text header__text">SCISSORS</h5>
-        <h5 className="text header__text">LIZARD</h5>
-        <h5 className="text header__text">SPOKE</h5>
+        <img src={Logo} alt="logo" className="logo" />
       </div>
       <div className="score__button">
         <p className="score__text">score</p>

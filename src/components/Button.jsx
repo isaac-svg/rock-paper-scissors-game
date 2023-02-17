@@ -4,9 +4,9 @@ import { gameContext } from "../ganecontext/GameContext";
 const Button = () => {
   const { setShowRules } = useContext(gameContext);
   return (
-    <div className="rules">
+    <div className="rules__btn__container">
       <button
-        className="text outline rule__button cursor"
+        className="text outline rule__button "
         onClick={() => setShowRules(true)}
       >
         RULES

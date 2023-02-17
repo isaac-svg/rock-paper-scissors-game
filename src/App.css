@@ -39,17 +39,18 @@ body {
     var(--background-gradient1),
     var(--background-gradient2)
   );
-  max-height: 100vh;
-  height: 100vh;
-  overflow: hidden;
+  max-height: none;
+  min-height: 100vh;
   width: calc(100vw - 3rem);
   margin-inline: auto;
   background-repeat: no-repeat;
   padding-top: clamp(1rem, 1rem + 2vh, 5rem);
+  overflow-x: hidden;
 }
 main {
   max-width: 900px;
   margin-inline: auto;
+  height: 100%;
 }
 /* general styles */
 
@@ -78,12 +79,10 @@ div:has(.disc) {
   max-width: 900px;
   margin-bottom: 4rem;
 }
-h5.header__text {
-  font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
-}
+
 .score__button {
   background-color: white;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -96,7 +95,7 @@ h5.header__text {
   text-transform: uppercase;
 }
 .score__value {
-  font-size: clamp(3rem, 5vw + 1rem, 4rem);
+  font-size: clamp(3rem, 5vw + 2rem, 6rem);
   font-weight: 550;
   color: var(--dark-text);
 }
@@ -121,6 +120,8 @@ h5.header__text {
   /* box-shadow: inset -7px 7px 16px rgba(0, 0, 0, 0.2); */
 }
 .computer__card {
+  display: grid;
+  gap: 3rem;
 }
 #scissors {
   border: 15px solid var(--scissors-gradient2);
@@ -182,9 +183,13 @@ h5.header__text {
 }
 
 @media screen and (max-width: 620px) {
-  .rules {
+  .logo {
+    width: 60%;
+  }
+  .rules__btn__container {
     position: absolute;
     bottom: 1rem;
+    /* right: 2rem; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -213,15 +218,19 @@ h5.header__text {
 }
 @media screen and (max-width: 335px) {
   .disc {
-    height: 80px;
-    width: 80px;
+    height: 95px;
+    width: 95px;
   }
 }
-@media screen and (min-width: 620px), (orientation: landscape) {
-  .rules {
+@media screen and (min-width: 620px) {
+  .score__button {
+    background-color: white;
+    padding: 1rem 3rem;
+  }
+  .rules__btn__container {
     position: absolute;
-    bottom: 2rem;
-    right: 5rem;
+    bottom: 1rem;
+    right: 1rem;
     display: flex;
     justify-content: center;
   }
@@ -269,11 +278,12 @@ h5.header__text {
 .decision__component {
   margin-top: 10rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: aqua;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 .decision__component .choice {
-  background-color: tomato;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -289,4 +299,26 @@ h5.header__text {
   font-size: 1.5rem;
   font-weight: 600;
 }
+.winner__container {
+  /* background-color: red; */
+  /* cursor: pointer; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 3rem;
+  text-align: center;
+}
+.winner__text {
+  color: white;
+  font-size: clamp(1rem, 5vw + 1rem, 4rem);
+}
+.play__again {
+  cursor: pointer;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+}
+
 /*  */

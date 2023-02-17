@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { gameContext } from "../ganecontext/GameContext";
 import Disc from "./Disc";
 import BoardTrack from "/images/bg-pentagon.svg";
 const BoardComponent = () => {
+  const { showDecisionPage } = useContext(gameContext);
+
   return (
     <div className="board__track">
       <div className="pentagon">

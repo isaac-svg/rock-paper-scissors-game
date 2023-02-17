@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./App.css";
 import GameBar from "./components/GameBar";
 import BoardComponent from "./components/BoardComponent";
@@ -8,13 +8,23 @@ import RulesComponent from "./components/utils/RulesComponent";
 import DecisionComponent from "./components/DecisionComponent";
 const App = () => {
   const { showRules, showDecisionPage } = useContext(gameContext);
+  const [resize, setResize] = useState(0);
+  useEffect(() => {
+    window.addEventListener("resize", (e) => {
+      setResize(window.innerWidth);
+    });
+    return window.removeEventListener("resize", (e) => {
+      setResize(window.innerWidth);
+    });
+  }, [resize]);
+  console.log(resize);
   return (
     <main>
       <GameBar />
       {showDecisionPage && <DecisionComponent />}
       {!showDecisionPage && <BoardComponent />}
-      <Button />
       {showRules && <RulesComponent />}
+      <Button />
     </main>
   );
 };

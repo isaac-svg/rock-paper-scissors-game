@@ -9,6 +9,9 @@ const GameContextProvider = ({ children }) => {
     name: "",
     icon: "",
   });
+  // console.log(gameObject, "from context");
+
+  // clear game object after the user clicks play again
   /*
  interface for the computer choice 
  the holds the sets the state of the computer choice
@@ -30,8 +33,9 @@ function to set set the state of the gameObject that is the choice
 @param  choice
  this takes the state and updates it with the name and img url of the card xclicked 
 */
-  const updateChoice = (choice) => {
-    setGameObject({ name: choice.name, icon: choice.icon });
+  const updateChoice = ({ name, icon }) => {
+    setGameObject({ name, icon });
+    console.log(gameObject, "from updateChoice");
   };
   /*
   state to check the condition of rules modal either true or false
@@ -46,15 +50,22 @@ function to set set the state of the gameObject that is the choice
    */
   const [score, setScore] = useState(0);
   /**
-   score state  
+ winner state  
    */
   const [declareWinner, setDeclareWinner] = useState(false);
 
+  // state to to manipulate the winning or lossing text
+
+  const [userWin, setUserWin] = useState(false);
+  // state to to manipulate the drawing of choices
+
+  const [playersDraw, setPlayersDraw] = useState(false);
   return (
     <gameContext.Provider
       value={{
         updateChoice,
         gameObject,
+        setGameObject,
         showRules,
         setShowRules,
         showDecisionPage,
@@ -69,6 +80,10 @@ function to set set the state of the gameObject that is the choice
         setScore,
         setDeclareWinner,
         declareWinner,
+        userWin,
+        setUserWin,
+        setPlayersDraw,
+        playersDraw,
       }}
     >
       {children}

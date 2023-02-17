@@ -1,6 +1,7 @@
 .rules__container {
   /* background-color: white; */
   /* transition: all 1s ease-in-out; */
+  z-index: 999;
 }
 .rules__container .rules__card {
   background-color: white;

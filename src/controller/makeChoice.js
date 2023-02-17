@@ -1,6 +1,5 @@
 const posibleComputerChoices = [
   { name: "rock", icon: "images/icon-rock.svg" },
-
   { name: "lizard", icon: "images/icon-lizard.svg" },
   { name: "paper", icon: "images/icon-paper.svg" },
   { name: "scissors", icon: "images/icon-scissors.svg" },
@@ -21,7 +20,7 @@ const makeChoice = () => {
     posibleComputerChoices[
       Math.floor(Math.random() * (posibleComputerChoices.length - 1))
     ];
-  console.log(computerChoice, "from computer");
+  // console.log(computerChoice, "from computer");
   return computerChoice;
 };
 

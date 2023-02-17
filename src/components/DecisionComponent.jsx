@@ -7,6 +7,7 @@ import chooseWinner from "../controller/chooseWinner";
 const DecisionComponent = () => {
   const {
     gameObject,
+    setGameObject,
     setAllowChange,
     showComputerChoice,
     setShowComputerChoice,
@@ -15,6 +16,10 @@ const DecisionComponent = () => {
     score,
     setDeclareWinner,
     declareWinner,
+    setShowDecisionPage,
+    userWin,
+    setPlayersDraw,
+    playersDraw,
   } = useContext(gameContext);
   const [computerChoice, setComputerChoice] = useState({});
   const delayComputerChoice = () => {
@@ -30,12 +35,13 @@ const DecisionComponent = () => {
       computerDec.name,
       setScore,
       score,
-      setDeclareWinner
+      setDeclareWinner,
+      setPlayersDraw
     );
     delayComputerChoice();
-    console.log(computerChoice, "computerChoice");
   }, []);
 
+  delayComputerChoice();
   return (
     <div className="decision__component">
       <div className="choice">
@@ -46,6 +52,24 @@ const DecisionComponent = () => {
         />
         <span className="text choice__text">YOU PICKED</span>
       </div>
+      {declareWinner && (
+        <div className="winner__container">
+          <h2 className="winner__text">{`${
+            playersDraw ? "YOU DRAW" : userWin ? "YOU WIN" : "YOU LOSE"
+          }`}</h2>
+          <button
+            className="play__again"
+            onClick={() => {
+              setShowDecisionPage(false);
+              // updateChoice({ name: "", icon: "" });
+              setAllowChange(true);
+              setGameObject({ name: "", icon: "" });
+            }}
+          >
+            PLAY AGAIN
+          </button>
+        </div>
+      )}
       <div className="choice">
         <div className="computer__card">
           {showComputerChoice && (
@@ -55,10 +79,8 @@ const DecisionComponent = () => {
               position="choice__disc"
             />
           )}
+          <span className="text choice__text">THE HOUSE PICKED</span>
         </div>
-        {declareWinner ? <h1>Hello world</h1> : "what are you tring todo"}
-
-        <span className="text choice__text">THE HOUSE PICKED</span>
       </div>
     </div>
   );
