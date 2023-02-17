@@ -1,1 +1,1 @@
-[![live site](https://rock-paper-scissors-game-wine.vercel.app/)
+[live site](https://rock-paper-scissors-game-wine.vercel.app/)
