@@ -72,6 +72,8 @@ const chooseWinner = (
     case "scissors": {
       if (computerChoice == "scissors") {
         declareDraw(true);
+        setScore((state = state));
+
         declareWinner(true);
       } else if (scissorsWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
@@ -83,6 +85,7 @@ const chooseWinner = (
     case "lizard": {
       if (computerChoice == "lizard") {
         declareDraw(true);
+        setScore((state = state));
         declareWinner(true);
       } else if (lizardWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
@@ -94,6 +97,7 @@ const chooseWinner = (
     case "spock": {
       if (computerChoice == "spock") {
         declareDraw(true);
+        setScore((state = state));
         declareWinner(true);
       } else if (spockWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
@@ -105,6 +109,7 @@ const chooseWinner = (
     case "rock": {
       if (computerChoice == "rock") {
         declareDraw(true);
+        setScore((state = state));
         declareWinner(true);
       } else if (rockWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
@@ -116,6 +121,7 @@ const chooseWinner = (
     case "paper": {
       if (computerChoice == "paper") {
         declareDraw(true);
+        setScore((state = state));
         declareWinner(true);
       } else if (paperWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);

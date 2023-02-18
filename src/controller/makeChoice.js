@@ -4,11 +4,6 @@ const posibleComputerChoices = [
   { name: "paper", icon: "images/icon-paper.svg" },
   { name: "scissors", icon: "images/icon-scissors.svg" },
   { name: "spock", icon: "images/icon-spock.svg" },
-  { name: "lizard", icon: "images/icon-lizard.svg" },
-  { name: "scissors", icon: "images/icon-scissors.svg" },
-  { name: "paper", icon: "images/icon-paper.svg" },
-  { name: "spock", icon: "images/icon-spock.svg" },
-  { name: "rock", icon: "images/icon-rock.svg" },
 ];
 /**
  * @returns computer choice after 1.5s
