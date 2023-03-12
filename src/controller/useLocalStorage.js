@@ -1,6 +1,4 @@
 export const useLocalStorage = (name, state) => {};
-<<<<<<< HEAD
-=======
 
 // class Scissor extends Object {
 
@@ -37,4 +35,3 @@ export const useLocalStorage = (name, state) => {};
 //     if(num == -1) console.log("loss");
 //     if(num == 1) console.log("win");
 // })
->>>>>>> 9ea6bee (refactored choseWinner)
