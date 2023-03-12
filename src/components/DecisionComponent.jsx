@@ -18,6 +18,10 @@ const DecisionComponent = () => {
     declareWinner,
     setShowDecisionPage,
     userWin,
+<<<<<<< HEAD
+=======
+    setUserWin,
+>>>>>>> 9ea6bee (refactored choseWinner)
     setPlayersDraw,
     playersDraw,
   } = useContext(gameContext);
@@ -35,6 +39,10 @@ const DecisionComponent = () => {
       computerDec.name,
       setScore,
       score,
+<<<<<<< HEAD
+=======
+      setUserWin,
+>>>>>>> 9ea6bee (refactored choseWinner)
       setDeclareWinner,
       setPlayersDraw
     );
@@ -56,6 +64,10 @@ const DecisionComponent = () => {
         <div className="winner__container">
           <h2 className="winner__text">{`${
             playersDraw ? "YOU DRAW" : userWin ? "YOU WIN" : "YOU LOSE"
+<<<<<<< HEAD
+=======
+            // userWin ? "YOU WIN" : "YOU LOSE"
+>>>>>>> 9ea6bee (refactored choseWinner)
           }`}</h2>
           <button
             className="play__again"

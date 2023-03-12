@@ -9,6 +9,7 @@ import DecisionComponent from "./components/DecisionComponent";
 const App = () => {
   const { showRules, showDecisionPage } = useContext(gameContext);
   const [resize, setResize] = useState(0);
+<<<<<<< HEAD
   useEffect(() => {
     window.addEventListener("resize", (e) => {
       setResize(window.innerWidth);
@@ -18,6 +19,17 @@ const App = () => {
     });
   }, [resize]);
   console.log(resize);
+=======
+  // useEffect(() => {
+  //   window.addEventListener("resize", (e) => {
+  //     setResize(window.innerWidth);
+  //   });
+  //   return window.removeEventListener("resize", (e) => {
+  //     setResize(window.innerWidth);
+  //   });
+  // }, [resize]);
+  // console.log(resize);
+>>>>>>> 9ea6bee (refactored choseWinner)
   return (
     <main>
       <GameBar />

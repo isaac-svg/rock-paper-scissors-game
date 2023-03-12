@@ -10,8 +10,12 @@ const Disc = ({ name, icon, position }) => {
       id={`${name}`}
       onClick={() => {
         allowChange && updateChoice({ name, icon });
+<<<<<<< HEAD
         // updateChoice(name, icon);
         console.log("allow Change", allowChange);
+=======
+
+>>>>>>> 9ea6bee (refactored choseWinner)
         setShowDecisionPage(true);
         console.log({ name, icon }, "from Disc component");
       }}

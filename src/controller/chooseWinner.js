@@ -19,11 +19,26 @@ const spockWinsAgainst = {
   rock: "rock",
 };
 
+<<<<<<< HEAD
+=======
+const userLose = (setScore, state, declareWinner, declareDraw, setUserWin) => {
+  setScore((state -= 1));
+  declareDraw(false);
+  declareWinner(true);
+  setUserWin(false);
+};
+const userWins = (setScore, state, declareWinner, setUserWin) => {
+  setScore((state += 1));
+  declareWinner(true);
+  setUserWin(true);
+};
+>>>>>>> 9ea6bee (refactored choseWinner)
 const chooseWinner = (
   userChoice,
   computerChoice,
   setScore,
   state,
+<<<<<<< HEAD
   declareWinner,
   declareDraw
 ) => {
@@ -48,6 +63,72 @@ const chooseWinner = (
   } else {
     setScore((state -= 1));
     declareWinner(true);
+=======
+  setUserWin,
+  declareWinner,
+  declareDraw
+) => {
+  switch (userChoice) {
+    case "scissors": {
+      if (computerChoice == "scissors") {
+        declareDraw(true);
+        declareWinner(true);
+      } else if (scissorsWinsAgainst[computerChoice]) {
+        userWins(setScore, state, declareWinner, setUserWin);
+      } else {
+        userLose(setScore, state, declareWinner, declareDraw, setUserWin);
+      }
+      break;
+    }
+    case "lizard": {
+      if (computerChoice == "lizard") {
+        declareDraw(true);
+        declareWinner(true);
+      } else if (lizardWinsAgainst[computerChoice]) {
+        userWins(setScore, state, declareWinner, setUserWin);
+      } else {
+        userLose(setScore, state, declareWinner, declareDraw, setUserWin);
+      }
+      break;
+    }
+    case "spock": {
+      if (computerChoice == "spock") {
+        declareDraw(true);
+        declareWinner(true);
+      } else if (spockWinsAgainst[computerChoice]) {
+        userWins(setScore, state, declareWinner, setUserWin);
+      } else {
+        userLose(setScore, state, declareWinner, declareDraw, setUserWin);
+      }
+      break;
+    }
+    case "rock": {
+      if (computerChoice == "rock") {
+        declareDraw(true);
+        declareWinner(true);
+      } else if (rockWinsAgainst[computerChoice]) {
+        userWins(setScore, state, declareWinner, setUserWin);
+      } else {
+        userLose(setScore, state, declareWinner, declareDraw, setUserWin);
+      }
+      break;
+    }
+    case "paper": {
+      if (computerChoice == "paper") {
+        declareDraw(true);
+        declareWinner(true);
+      } else if (paperWinsAgainst[computerChoice]) {
+        userWins(setScore, state, declareWinner, setUserWin);
+      } else {
+        userLose(setScore, state, declareWinner, declareDraw, setUserWin);
+      }
+      break;
+    }
+
+    default:
+      console.log("default");
+      break;
+>>>>>>> 9ea6bee (refactored choseWinner)
   }
 };
 
