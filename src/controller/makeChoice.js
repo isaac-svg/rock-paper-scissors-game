@@ -16,12 +16,12 @@ const posibleComputerChoices = [
  * @function makeChoice picks a random choice each time it is invoked
  */
 const makeChoice = () => {
-  console.log("pseudo is called");
+  
   const computerChoice =
     posibleComputerChoices[
       Math.floor(Math.random() * (posibleComputerChoices.length - 1))
     ];
-  console.log(computerChoice, "from computer");
+  
   return computerChoice;
 };
 

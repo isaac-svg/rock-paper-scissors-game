@@ -18,7 +18,9 @@ const App = () => {
       setResize(window.innerWidth);
     });
   }, [resize]);
-
+  useEffect(()=>{
+    console.log("contact me for your web apps https://github.com/isaac-svg")
+  },[])
   return (
     <main>
       <GameBar />

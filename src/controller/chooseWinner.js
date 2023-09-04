@@ -39,7 +39,7 @@ const chooseWinner = (
   declareWinner,
   declareDraw
 ) => {
-  console.log(computerChoice , "checking computer choice from choose winner function")
+  // console.log(computerChoice , "checking computer choice from choose winner function")
   switch (userChoice) {
     case "scissors": {
       if (computerChoice == "scissors") {

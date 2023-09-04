@@ -35,7 +35,7 @@ function to set set the state of the gameObject that is the choice
 */
   const updateChoice = ({ name, icon }) => {
     setGameObject({ name, icon });
-    console.log(gameObject, "from updateChoice");
+    
   };
   /*
   state to check the condition of rules modal either true or false

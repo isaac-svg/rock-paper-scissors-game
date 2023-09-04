@@ -11,7 +11,7 @@ const Disc = ({ name, icon, position }) => {
       onClick={() => {
         allowChange && updateChoice({ name, icon });
         setShowDecisionPage(true);
-        console.log({ name, icon }, "from Disc component");
+        // console.log({ name, icon }, "from Disc component");
       }}
     >
       <img src={`${icon}`} alt="disc icon" className="disc__icon" />
