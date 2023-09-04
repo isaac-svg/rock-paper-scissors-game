@@ -3,7 +3,7 @@ const scissorsWinsAgainst = {
   lizard: "lizard",
 };
 const paperWinsAgainst = {
-  lizard: "lizard",
+  rock: "rock",
   spock: "spock",
 };
 const rockWinsAgainst = {
@@ -39,13 +39,14 @@ const chooseWinner = (
   declareWinner,
   declareDraw
 ) => {
+  console.log(computerChoice , "checking computer choice from choose winner function")
   switch (userChoice) {
     case "scissors": {
       if (computerChoice == "scissors") {
         declareDraw(true);
-        setScore((state = state));
+        setScore(state);
 
-        declareWinner(true);
+        // declareWinner(false);
       } else if (scissorsWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
       } else {
@@ -56,8 +57,8 @@ const chooseWinner = (
     case "lizard": {
       if (computerChoice == "lizard") {
         declareDraw(true);
-        setScore((state = state));
-        declareWinner(true);
+        // setScore((state = state));
+        // declareWinner(false);
       } else if (lizardWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
       } else {
@@ -68,8 +69,8 @@ const chooseWinner = (
     case "spock": {
       if (computerChoice == "spock") {
         declareDraw(true);
-        setScore((state = state));
-        declareWinner(true);
+        setScore((state));
+        // declareWinner(true);
       } else if (spockWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
       } else {
@@ -80,8 +81,8 @@ const chooseWinner = (
     case "rock": {
       if (computerChoice == "rock") {
         declareDraw(true);
-        setScore((state = state));
-        declareWinner(true);
+        setScore((state));
+        // declareWinner(true);
       } else if (rockWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
       } else {
@@ -92,8 +93,8 @@ const chooseWinner = (
     case "paper": {
       if (computerChoice == "paper") {
         declareDraw(true);
-        setScore((state = state));
-        declareWinner(true);
+        setScore((state));
+        // declareWinner(true);
       } else if (paperWinsAgainst[computerChoice]) {
         userWins(setScore, state, declareWinner, setUserWin);
       } else {

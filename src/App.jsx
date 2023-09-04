@@ -22,9 +22,11 @@ const App = () => {
   return (
     <main>
       <GameBar />
+      <section className="game__wrapper">
       {showDecisionPage && <DecisionComponent />}
       {!showDecisionPage && <BoardComponent />}
       {showRules && <RulesComponent />}
+      </section>
       <Button />
     </main>
   );

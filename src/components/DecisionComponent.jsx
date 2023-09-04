@@ -47,14 +47,18 @@ const DecisionComponent = () => {
   return (
     <div className="decision__component">
       <div className="choice">
-        <Disc
+       <div className="test">
+       <Disc
           name={gameObject.name}
           icon={gameObject.icon}
           position="choice__disc"
         />
         <span className="text choice__text">YOU PICKED</span>
+       </div>
+       
       </div>
-      {declareWinner && (
+     
+     {declareWinner && (
         <div className="winner__container">
           <h2 className="winner__text">{`${
             playersDraw ? "YOU DRAW" : userWin ? "YOU WIN" : "YOU LOSE"
@@ -73,6 +77,7 @@ const DecisionComponent = () => {
           </button>
         </div>
       )}
+
       <div className="choice">
         <div className="computer__card">
           {showComputerChoice && (
@@ -81,6 +86,7 @@ const DecisionComponent = () => {
               icon={computerChoice?.icon}
               position="choice__disc"
             />
+           
           )}
           <span className="text choice__text">THE HOUSE PICKED</span>
         </div>
