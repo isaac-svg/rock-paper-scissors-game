@@ -1,3 +1,6 @@
+![image](https://github.com/isaac-svg/rock-paper-scissors-game/assets/109481712/b17fd005-8c25-4426-b167-7da940c6eff4)
+
+
 ```js
 const posibleComputerChoices = [
   { name: "rock", icon: "images/icon-rock.svg" },
